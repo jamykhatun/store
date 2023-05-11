@@ -1,0 +1,26 @@
+Финальный шаг — генерация фидов.
+
+item_count_prev = 0
+
+item_count_next = 1000 # должен быть равен rows_in_rss
+
+count_rss = 0
+
+print(total_xml_file)
+
+
+while count_rss < total_xml_file:
+    
+    create_xml(item_count_next)
+
+    data_list = data_for_rss(item_count_prev,item_count_next)
+    
+    close_xml(item_count_next)
+    
+    size_file(item_count_next)
+    
+    item_count_prev += rows_in_rss
+    
+    item_count_next += rows_in_rss
+    
+    count_rss += 1
